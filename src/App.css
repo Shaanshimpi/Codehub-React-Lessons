@@ -1,0 +1,185 @@
+/* Student Interface Styles */
+.student-app {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid #34495e;
+}
+
+.sidebar-header h1 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-header p {
+  font-size: 0.875rem;
+  color: #bdc3c7;
+  margin-bottom: 0;
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.lesson-button {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: #34495e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lesson-button:hover {
+  background-color: #415b76;
+  transform: translateX(5px);
+}
+
+.lesson-button.active {
+  background-color: #3498db;
+  font-weight: 600;
+}
+
+.lesson-button.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lesson-button.coming-soon:hover {
+  transform: none;
+  background-color: #34495e;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.content-header {
+  background: white;
+  padding: var(--spacing-lg);
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.content-header h2 {
+  color: #2c3e50;
+  margin-bottom: var(--spacing-sm);
+}
+
+.example-selector {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.example-button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.example-button:hover {
+  background-color: #d5dbdd;
+  border-color: #95a5a6;
+}
+
+.example-button.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.example-display {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.example-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Coming Soon Message */
+.coming-soon-message {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: #7f8c8d;
+}
+
+.coming-soon-message h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-app {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+  }
+  
+  .sidebar-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .lesson-button:hover {
+    transform: none;
+  }
+  
+  .content-header {
+    padding: var(--spacing-md);
+  }
+  
+  .example-selector {
+    flex-wrap: wrap;
+  }
+  
+  .example-display {
+    padding: var(--spacing-md);
+  }
+  
+  .example-container {
+    padding: var(--spacing-md);
+  }
+}
+
