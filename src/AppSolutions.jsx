@@ -5,26 +5,46 @@ import './AppSolutions.css'
 import IntroSol1 from './components_solutions/1_intro/Example1_HelloWorld.jsx'
 import IntroSol2 from './components_solutions/1_intro/Example2_UserGreeting.jsx'
 import IntroSol3 from './components_solutions/1_intro/Example3_ProductCard.jsx'
+import IntroSol4 from './components_solutions/1_intro/Example4_InlineExpressions.jsx'
+import IntroSol5 from './components_solutions/1_intro/Example5_ConditionalRender.jsx'
+import IntroSol6 from './components_solutions/1_intro/Example6_ListRenderingIntro.jsx'
+import IntroSol7 from './components_solutions/1_intro/Example7_AttributesAndStyles.jsx'
 
 // Day 2 (Props) - Solutions
 import PropsSol1 from './components_solutions/2_props/Example1_BasicProps.jsx'
 import PropsSol2 from './components_solutions/2_props/Example2_MultipleProps.jsx'
 import PropsSol3 from './components_solutions/2_props/Example3_PropsWithDefaults.jsx'
+import PropsSol4 from './components_solutions/2_props/Example4_ObjectProps.jsx'
+import PropsSol5 from './components_solutions/2_props/Example5_ChildrenProp.jsx'
+import PropsSol6 from './components_solutions/2_props/Example6_BooleanProps.jsx'
+import PropsSol7 from './components_solutions/2_props/Example7_ArrayProps.jsx'
 // Day 3 (Events) - Solutions
 import EventsSol1 from './components_solutions/3_events/Example1_ButtonClick.jsx'
 import EventsSol2 from './components_solutions/3_events/Example2_InputAlert.jsx'
 import EventsSol3 from './components_solutions/3_events/Example3_DoubleClick.jsx'
+import EventsSol4 from './components_solutions/3_events/Example4_MouseOver.jsx'
+import EventsSol5 from './components_solutions/3_events/Example5_FormSubmitPrevent.jsx'
+import EventsSol6 from './components_solutions/3_events/Example6_KeyDown.jsx'
+import EventsSol7 from './components_solutions/3_events/Example7_FocusBlur.jsx'
 
 // Day 4 (State) - Solutions
 import StateSol1 from './components_solutions/4_state/Example1_Counter.jsx'
 import StateSol2 from './components_solutions/4_state/Example2_Toggle.jsx'
 import StateSol3 from './components_solutions/4_state/Example3_InputField.jsx'
+import StateSol4 from './components_solutions/4_state/Example4_StepCounter.jsx'
+import StateSol5 from './components_solutions/4_state/Example5_ShowHideText.jsx'
+import StateSol6 from './components_solutions/4_state/Example6_Checklist.jsx'
+import StateSol7 from './components_solutions/4_state/Example7_CharacterCount.jsx'
 import ListsSol1 from './components_solutions/5_lists/Example1_SimpleList.jsx'
 import ListsSol2 from './components_solutions/5_lists/Example2_ProductList.jsx'
 import ListsSol3 from './components_solutions/5_lists/Example3_TwoLists.jsx'
 import ListsSol4 from './components_solutions/5_lists/Example4_FilterList.jsx'
 import ListsSol5 from './components_solutions/5_lists/Example5_SearchList.jsx'
 import ListsSol6 from './components_solutions/5_lists/Example6_SortList.jsx'
+import ListsSol7 from './components_solutions/5_lists/Example7_GroupBy.jsx'
+import ListsSol8 from './components_solutions/5_lists/Example8_Paginated.jsx'
+import ListsSol9 from './components_solutions/5_lists/Example9_UniqueKeys.jsx'
+import ListsSol10 from './components_solutions/5_lists/Example10_NestedList.jsx'
 
 // Day 6 (Functions as Props) - Solutions
 // Note: Starting from Day 6, each example is in its own directory with Main.jsx
@@ -32,6 +52,15 @@ import FunctionsPropsSol1 from './components_solutions/6_functions_as_props/Exam
 import FunctionsPropsSol2 from './components_solutions/6_functions_as_props/Example2_ProductLike/Main.jsx'
 import FunctionsPropsSol3 from './components_solutions/6_functions_as_props/Example3_TaskToggle/Main.jsx'
 import FunctionsPropsSol4 from './components_solutions/6_functions_as_props/Example4_CartQuantity/Main.jsx'
+import FunctionsPropsSol5 from './components_solutions/6_functions_as_props/Example5_SelectableUser/Main.jsx'
+import FunctionsPropsSol6 from './components_solutions/6_functions_as_props/Example6_VoteSystem/Main.jsx'
+import FunctionsPropsSol7 from './components_solutions/6_functions_as_props/Example7_TodoDeleteAll/Main.jsx'
+import FunctionsPropsSol8 from './components_solutions/6_functions_as_props/Example8_RatingStars/Main.jsx'
+
+// Day 7 (useEffect) - Solutions
+import UseEffectSol1 from './components_solutions/7_useEffect/Example1_DocumentTitleBasic.jsx'
+import UseEffectSol2 from './components_solutions/7_useEffect/Example2_DelayedStatus.jsx'
+import UseEffectSol3 from './components_solutions/7_useEffect/Example3_IntervalClock.jsx'
 
 function Section({ day, title, children, topicClass }) {
   return (
@@ -83,6 +112,18 @@ function AppSolutions() {
           <Example label="Example 3: Product Card">
             <IntroSol3 />
           </Example>
+          <Example label="Example 4: Inline Expressions">
+            <IntroSol4 />
+          </Example>
+          <Example label="Example 5: Conditional Render">
+            <IntroSol5 />
+          </Example>
+          <Example label="Example 6: List Rendering Intro">
+            <IntroSol6 />
+          </Example>
+          <Example label="Example 7: Attributes and Styles">
+            <IntroSol7 />
+          </Example>
         </Section>
 
         {/* Day 2 */}
@@ -95,6 +136,18 @@ function AppSolutions() {
           </Example>
           <Example label="Example 3: Props with Defaults">
             <PropsSol3 />
+          </Example>
+          <Example label="Example 4: Object Props">
+            <PropsSol4 />
+          </Example>
+          <Example label="Example 5: Children Prop">
+            <PropsSol5 />
+          </Example>
+          <Example label="Example 6: Boolean Props">
+            <PropsSol6 />
+          </Example>
+          <Example label="Example 7: Array Props">
+            <PropsSol7 />
           </Example>
         </Section>
 
@@ -109,6 +162,18 @@ function AppSolutions() {
           <Example label="Example 3: Double Click">
             <EventsSol3 />
           </Example>
+          <Example label="Example 4: Mouse Over/Out">
+            <EventsSol4 />
+          </Example>
+          <Example label="Example 5: Form Prevent Default">
+            <EventsSol5 />
+          </Example>
+          <Example label="Example 6: Key Down">
+            <EventsSol6 />
+          </Example>
+          <Example label="Example 7: Focus and Blur">
+            <EventsSol7 />
+          </Example>
         </Section>
 
         {/* Day 4 */}
@@ -121,6 +186,18 @@ function AppSolutions() {
           </Example>
           <Example label="Example 3: Input Field">
             <StateSol3 />
+          </Example>
+          <Example label="Example 4: Step Counter">
+            <StateSol4 />
+          </Example>
+          <Example label="Example 5: Disable Submit on Empty">
+            <StateSol5 />
+          </Example>
+          <Example label="Example 6: Checklist">
+            <StateSol6 />
+          </Example>
+          <Example label="Example 7: Character Count">
+            <StateSol7 />
           </Example>
         </Section>
 
@@ -144,6 +221,18 @@ function AppSolutions() {
           <Example label="Example 6: Sort List">
             <ListsSol6 />
           </Example>
+          <Example label="Example 7: Group By Category">
+            <ListsSol7 />
+          </Example>
+          <Example label="Example 8: Paginated List">
+            <ListsSol8 />
+          </Example>
+          <Example label="Example 9: Unique Keys">
+            <ListsSol9 />
+          </Example>
+          <Example label="Example 10: Nested List">
+            <ListsSol10 />
+          </Example>
         </Section>
 
         {/* Day 6 */}
@@ -159,6 +248,31 @@ function AppSolutions() {
           </Example>
           <Example label="Example 4: Cart Quantity">
             <FunctionsPropsSol4 />
+          </Example>
+          <Example label="Example 5: Selectable User">
+            <FunctionsPropsSol5 />
+          </Example>
+          <Example label="Example 6: Vote System">
+            <FunctionsPropsSol6 />
+          </Example>
+          <Example label="Example 7: Todo Delete All">
+            <FunctionsPropsSol7 />
+          </Example>
+          <Example label="Example 8: Rating Stars">
+            <FunctionsPropsSol8 />
+          </Example>
+        </Section>
+
+        {/* Day 7 */}
+        <Section day={7} title="Day 7: useEffect" topicClass="topic-2">
+          <Example label="Example 1: Document Title on Count Change">
+            <UseEffectSol1 />
+          </Example>
+          <Example label="Example 2: Delayed Ready Status (Timeout)">
+            <UseEffectSol2 />
+          </Example>
+          <Example label="Example 3: Interval Clock (Tick)">
+            <UseEffectSol3 />
           </Example>
         </Section>
       </div>
