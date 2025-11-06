@@ -58,9 +58,10 @@ import FunctionsPropsSol7 from './components_solutions/6_functions_as_props/Exam
 import FunctionsPropsSol8 from './components_solutions/6_functions_as_props/Example8_RatingStars/Main.jsx'
 
 // Day 7 (useEffect) - Solutions
-import UseEffectSol1 from './components_solutions/7_useEffect/Example1_DocumentTitleBasic.jsx'
-import UseEffectSol2 from './components_solutions/7_useEffect/Example2_DelayedStatus.jsx'
-import UseEffectSol3 from './components_solutions/7_useEffect/Example3_IntervalClock.jsx'
+import UseEffectSol4 from './components_solutions/7_useEffect/Example4_FilterStudentsByMarks/Main.jsx'
+import UseEffectSol5 from './components_solutions/7_useEffect/Example5_FilterProductsByPrice/Main.jsx'
+import UseEffectSol6 from './components_solutions/7_useEffect/Example6_FilterMoviesByYear/Main.jsx'
+import UseEffectSol7 from './components_solutions/7_useEffect/Example7_FilterItemsByCategory/Main.jsx'
 
 function Section({ day, title, children, topicClass }) {
   return (
@@ -265,14 +266,17 @@ function AppSolutions() {
 
         {/* Day 7 */}
         <Section day={7} title="Day 7: useEffect" topicClass="topic-2">
-          <Example label="Example 1: Document Title on Count Change">
-            <UseEffectSol1 />
+          <Example label="Example 4: Filter Students by Marks">
+            <UseEffectSol4 />
           </Example>
-          <Example label="Example 2: Delayed Ready Status (Timeout)">
-            <UseEffectSol2 />
+          <Example label="Example 5: Filter Products by Price">
+            <UseEffectSol5 />
           </Example>
-          <Example label="Example 3: Interval Clock (Tick)">
-            <UseEffectSol3 />
+          <Example label="Example 6: Filter Movies by Year">
+            <UseEffectSol6 />
+          </Example>
+          <Example label="Example 7: Filter Items by Category">
+            <UseEffectSol7 />
           </Example>
         </Section>
       </div>
