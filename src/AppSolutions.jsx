@@ -62,8 +62,118 @@ import UseEffectSol4 from './components_solutions/7_useEffect/Example4_FilterStu
 import UseEffectSol5 from './components_solutions/7_useEffect/Example5_FilterProductsByPrice/Main.jsx'
 import UseEffectSol6 from './components_solutions/7_useEffect/Example6_FilterMoviesByYear/Main.jsx'
 import UseEffectSol7 from './components_solutions/7_useEffect/Example7_FilterItemsByCategory/Main.jsx'
+import UseEffectSol8 from './components_solutions/7_useEffect/Example8_FetchNewsArticles/Main.jsx'
+import UseEffectSol9 from './components_solutions/7_useEffect/Example9_NasaApod/Main.jsx'
+import UseEffectSol10 from './components_solutions/7_useEffect/Example10_NasaImageSearch/Main.jsx'
 
-function Section({ day, title, children, topicClass }) {
+const daySections = [
+  {
+    day: 1,
+    title: 'Day 1: Introduction to JSX',
+    topicClass: 'topic-1',
+    examples: [
+      { label: 'Example 1: Hello World', component: IntroSol1 },
+      { label: 'Example 2: User Greeting', component: IntroSol2 },
+      { label: 'Example 3: Product Card', component: IntroSol3 },
+      { label: 'Example 4: Inline Expressions', component: IntroSol4 },
+      { label: 'Example 5: Conditional Render', component: IntroSol5 },
+      { label: 'Example 6: List Rendering Intro', component: IntroSol6 },
+      { label: 'Example 7: Attributes and Styles', component: IntroSol7 },
+    ],
+  },
+  {
+    day: 2,
+    title: 'Day 2: Props',
+    topicClass: 'topic-2',
+    examples: [
+      { label: 'Example 1: Basic Props', component: PropsSol1 },
+      { label: 'Example 2: Multiple Props', component: PropsSol2 },
+      { label: 'Example 3: Props with Defaults', component: PropsSol3 },
+      { label: 'Example 4: Object Props', component: PropsSol4 },
+      { label: 'Example 5: Children Prop', component: PropsSol5 },
+      { label: 'Example 6: Boolean Props', component: PropsSol6 },
+      { label: 'Example 7: Array Props', component: PropsSol7 },
+    ],
+  },
+  {
+    day: 3,
+    title: 'Day 3: Events',
+    topicClass: 'topic-3',
+    examples: [
+      { label: 'Example 1: Button Click', component: EventsSol1 },
+      { label: 'Example 2: Input + Alert', component: EventsSol2 },
+      { label: 'Example 3: Double Click', component: EventsSol3 },
+      { label: 'Example 4: Mouse Over/Out', component: EventsSol4 },
+      { label: 'Example 5: Form Prevent Default', component: EventsSol5 },
+      { label: 'Example 6: Key Down', component: EventsSol6 },
+      { label: 'Example 7: Focus and Blur', component: EventsSol7 },
+    ],
+  },
+  {
+    day: 4,
+    title: 'Day 4: State',
+    topicClass: 'topic-4',
+    examples: [
+      { label: 'Example 1: Counter', component: StateSol1 },
+      { label: 'Example 2: Toggle Visibility', component: StateSol2 },
+      { label: 'Example 3: Input Field', component: StateSol3 },
+      { label: 'Example 4: Step Counter', component: StateSol4 },
+      { label: 'Example 5: Disable Submit on Empty', component: StateSol5 },
+      { label: 'Example 6: Checklist', component: StateSol6 },
+      { label: 'Example 7: Character Count', component: StateSol7 },
+    ],
+  },
+  {
+    day: 5,
+    title: 'Day 5: Lists',
+    topicClass: 'topic-5',
+    examples: [
+      { label: 'Example 1: Student List', component: ListsSol1 },
+      { label: 'Example 2: Product List', component: ListsSol2 },
+      { label: 'Example 3: Teachers & Students', component: ListsSol3 },
+      { label: 'Example 4: Filter List', component: ListsSol4 },
+      { label: 'Example 5: Search List', component: ListsSol5 },
+      { label: 'Example 6: Sort List', component: ListsSol6 },
+      { label: 'Example 7: Group By Category', component: ListsSol7 },
+      { label: 'Example 8: Paginated List', component: ListsSol8 },
+      { label: 'Example 9: Unique Keys', component: ListsSol9 },
+      { label: 'Example 10: Nested List', component: ListsSol10 },
+    ],
+  },
+  {
+    day: 6,
+    title: 'Day 6: Functions as Props',
+    topicClass: 'topic-1',
+    examples: [
+      { label: 'Example 1: Blog Delete', component: FunctionsPropsSol1 },
+      { label: 'Example 2: Product Like', component: FunctionsPropsSol2 },
+      { label: 'Example 3: Task Toggle', component: FunctionsPropsSol3 },
+      { label: 'Example 4: Cart Quantity', component: FunctionsPropsSol4 },
+      { label: 'Example 5: Selectable User', component: FunctionsPropsSol5 },
+      { label: 'Example 6: Vote System', component: FunctionsPropsSol6 },
+      { label: 'Example 7: Todo Delete All', component: FunctionsPropsSol7 },
+      { label: 'Example 8: Rating Stars', component: FunctionsPropsSol8 },
+    ],
+  },
+  {
+    day: 7,
+    title: 'Day 7: useEffect',
+    topicClass: 'topic-2',
+    examples: [
+      { label: 'Example 4: Filter Students by Marks', component: UseEffectSol4 },
+      { label: 'Example 5: Filter Products by Price', component: UseEffectSol5 },
+      { label: 'Example 6: Filter Movies by Year', component: UseEffectSol6 },
+      { label: 'Example 7: Filter Items by Category', component: UseEffectSol7 },
+      { label: 'Example 8: Fetch News Articles (API)', component: UseEffectSol8 },
+      { label: 'Example 9: NASA APOD Viewer', component: UseEffectSol9 },
+      { label: 'Example 10: NASA Images Search', component: UseEffectSol10 },
+    ],
+  },
+]
+
+function Section({ day, title, topicClass, examples }) {
+  const orderedExamples = [...examples].reverse()
+
   return (
     <section className={`topic-section ${topicClass}`}>
       <div className="topic-header">
@@ -72,7 +182,11 @@ function Section({ day, title, children, topicClass }) {
         <p>Examples demonstrating core concepts for {title.replace('Day ' + day + ': ', '')}.</p>
       </div>
 
-      {children}
+      {orderedExamples.map(({ label, component: Component }) => (
+        <Example key={label} label={label}>
+          <Component />
+        </Example>
+      ))}
     </section>
   )
 }
@@ -102,183 +216,15 @@ function AppSolutions() {
       </header>
 
       <div className="solutions-content">
-        {/* Day 1 */}
-        <Section day={1} title="Day 1: Introduction to JSX" topicClass="topic-1">
-          <Example label="Example 1: Hello World">
-            <IntroSol1 />
-          </Example>
-          <Example label="Example 2: User Greeting">
-            <IntroSol2 />
-          </Example>
-          <Example label="Example 3: Product Card">
-            <IntroSol3 />
-          </Example>
-          <Example label="Example 4: Inline Expressions">
-            <IntroSol4 />
-          </Example>
-          <Example label="Example 5: Conditional Render">
-            <IntroSol5 />
-          </Example>
-          <Example label="Example 6: List Rendering Intro">
-            <IntroSol6 />
-          </Example>
-          <Example label="Example 7: Attributes and Styles">
-            <IntroSol7 />
-          </Example>
-        </Section>
-
-        {/* Day 2 */}
-        <Section day={2} title="Day 2: Props" topicClass="topic-2">
-          <Example label="Example 1: Basic Props">
-            <PropsSol1 />
-          </Example>
-          <Example label="Example 2: Multiple Props">
-            <PropsSol2 />
-          </Example>
-          <Example label="Example 3: Props with Defaults">
-            <PropsSol3 />
-          </Example>
-          <Example label="Example 4: Object Props">
-            <PropsSol4 />
-          </Example>
-          <Example label="Example 5: Children Prop">
-            <PropsSol5 />
-          </Example>
-          <Example label="Example 6: Boolean Props">
-            <PropsSol6 />
-          </Example>
-          <Example label="Example 7: Array Props">
-            <PropsSol7 />
-          </Example>
-        </Section>
-
-        {/* Day 3 */}
-        <Section day={3} title="Day 3: Events" topicClass="topic-3">
-          <Example label="Example 1: Button Click">
-            <EventsSol1 />
-          </Example>
-          <Example label="Example 2: Input + Alert">
-            <EventsSol2 />
-          </Example>
-          <Example label="Example 3: Double Click">
-            <EventsSol3 />
-          </Example>
-          <Example label="Example 4: Mouse Over/Out">
-            <EventsSol4 />
-          </Example>
-          <Example label="Example 5: Form Prevent Default">
-            <EventsSol5 />
-          </Example>
-          <Example label="Example 6: Key Down">
-            <EventsSol6 />
-          </Example>
-          <Example label="Example 7: Focus and Blur">
-            <EventsSol7 />
-          </Example>
-        </Section>
-
-        {/* Day 4 */}
-        <Section day={4} title="Day 4: State" topicClass="topic-4">
-          <Example label="Example 1: Counter">
-            <StateSol1 />
-          </Example>
-          <Example label="Example 2: Toggle Visibility">
-            <StateSol2 />
-          </Example>
-          <Example label="Example 3: Input Field">
-            <StateSol3 />
-          </Example>
-          <Example label="Example 4: Step Counter">
-            <StateSol4 />
-          </Example>
-          <Example label="Example 5: Disable Submit on Empty">
-            <StateSol5 />
-          </Example>
-          <Example label="Example 6: Checklist">
-            <StateSol6 />
-          </Example>
-          <Example label="Example 7: Character Count">
-            <StateSol7 />
-          </Example>
-        </Section>
-
-        {/* Day 5 */}
-        <Section day={5} title="Day 5: Lists" topicClass="topic-5">
-          <Example label="Example 1: Student List">
-            <ListsSol1 />
-          </Example>
-          <Example label="Example 2: Product List">
-            <ListsSol2 />
-          </Example>
-          <Example label="Example 3: Teachers & Students">
-            <ListsSol3 />
-          </Example>
-          <Example label="Example 4: Filter List">
-            <ListsSol4 />
-          </Example>
-          <Example label="Example 5: Search List">
-            <ListsSol5 />
-          </Example>
-          <Example label="Example 6: Sort List">
-            <ListsSol6 />
-          </Example>
-          <Example label="Example 7: Group By Category">
-            <ListsSol7 />
-          </Example>
-          <Example label="Example 8: Paginated List">
-            <ListsSol8 />
-          </Example>
-          <Example label="Example 9: Unique Keys">
-            <ListsSol9 />
-          </Example>
-          <Example label="Example 10: Nested List">
-            <ListsSol10 />
-          </Example>
-        </Section>
-
-        {/* Day 6 */}
-        <Section day={6} title="Day 6: Functions as Props" topicClass="topic-1">
-          <Example label="Example 1: Blog Delete">
-            <FunctionsPropsSol1 />
-          </Example>
-          <Example label="Example 2: Product Like">
-            <FunctionsPropsSol2 />
-          </Example>
-          <Example label="Example 3: Task Toggle">
-            <FunctionsPropsSol3 />
-          </Example>
-          <Example label="Example 4: Cart Quantity">
-            <FunctionsPropsSol4 />
-          </Example>
-          <Example label="Example 5: Selectable User">
-            <FunctionsPropsSol5 />
-          </Example>
-          <Example label="Example 6: Vote System">
-            <FunctionsPropsSol6 />
-          </Example>
-          <Example label="Example 7: Todo Delete All">
-            <FunctionsPropsSol7 />
-          </Example>
-          <Example label="Example 8: Rating Stars">
-            <FunctionsPropsSol8 />
-          </Example>
-        </Section>
-
-        {/* Day 7 */}
-        <Section day={7} title="Day 7: useEffect" topicClass="topic-2">
-          <Example label="Example 4: Filter Students by Marks">
-            <UseEffectSol4 />
-          </Example>
-          <Example label="Example 5: Filter Products by Price">
-            <UseEffectSol5 />
-          </Example>
-          <Example label="Example 6: Filter Movies by Year">
-            <UseEffectSol6 />
-          </Example>
-          <Example label="Example 7: Filter Items by Category">
-            <UseEffectSol7 />
-          </Example>
-        </Section>
+        {[...daySections].reverse().map((section) => (
+          <Section
+            key={section.day}
+            day={section.day}
+            title={section.title}
+            topicClass={section.topicClass}
+            examples={section.examples}
+          />
+        ))}
       </div>
 
       <button aria-label="Scroll to top" className="scroll-top-btn" onClick={scrollTop}>
