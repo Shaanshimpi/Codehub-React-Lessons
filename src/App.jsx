@@ -15,6 +15,9 @@ import Example from './components_exercises/7_useEffect/Example4_FilterStudentsB
 // import Example from './components_exercises/7_useEffect/Example5_FilterProductsByPrice/Main.jsx'
 // import Example from './components_exercises/7_useEffect/Example6_FilterMoviesByYear/Main.jsx'
 // import Example from './components_exercises/7_useEffect/Example7_FilterItemsByCategory/Main.jsx'
+// import Example from './components_exercises/7_useEffect/Example8_FetchNewsArticles/Main.jsx'
+// import Example from './components_exercises/7_useEffect/Example9_NasaApod/Main.jsx'
+// import Example from './components_exercises/7_useEffect/Example10_NasaImageSearch/Main.jsx'
 
 function App() {
   return (
